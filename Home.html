@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <!-- FullCalendar CSS and JavaScript -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Task Manager</h2>
+        <div class="menu-item active" onclick="filterTasks('all')">All Tasks</div>
+        <div class="menu-item" onclick="filterTasks('pending')">Pending Tasks</div>
+        <div class="menu-item" onclick="filterTasks('completed')">Completed Tasks</div>
+        <div class="menu-item" onclick="showCalendar()"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="header">
+            <h1>Today's Tasks</h1>
+        </div>
+
+        <!-- Task Input -->
+        <!-- Task Input -->
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <input type="date" id="taskDate">
+            <input type="time" id="taskDeadline" placeholder="Deadline">
+            <select id="taskCategory">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Others">Others</option>
+            </select>
+            <input type="number" id="taskReminder" placeholder="Reminder (min)" min="0">
+            <button class="add-task-btn" onclick="addTask()">Add Task</button>
+        </div>
+        <!-- Task List -->
+        <div class="task-list" id="taskList"></div>
+        
+        <!-- Calendar -->
+        <div id="calendar"></div>
+    </div>
+</body>
+</html>
